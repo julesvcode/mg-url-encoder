@@ -1,0 +1,12 @@
+div {
+    padding: 1rem 0;
+}
+.ImageWidth {
+    display: none;
+}
+
+#library {
+    border: 1px solid black;
+    width: 500px;
+    height: 300px;
+}

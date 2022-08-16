@@ -1,2 +1,2 @@
 # mg-url-encoder
- A URL Encoder for CDN
+MG URL Encoder - A URL Encoder for CDN

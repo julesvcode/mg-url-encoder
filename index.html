@@ -8,37 +8,79 @@
     
     <!-- STYLE SHEET -->
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
-    <div class="input">
-        <textarea id="input" name="input" placeholder="Type (or paste) here..."></textarea>
-    </div>
-    <label for="image">
-        <input type="checkbox" id="image" name="image" value="yes"> Image 
-    </label>
-    <label for="font">
-        <input type="checkbox" id="font" name="font" value="yes"> Font 
-    </label>
-    <label for="icon">
-        <input type="checkbox" id="icon" name="icon" value="yes"> Icon 
-    </label>
-    <div class="ImageWidth">
-        <label for="width">Width:</label>
-        <input type="text" id="width" name="width"> 
-    </div>
-    <div class="button">
-        <a href="#" id="encode">
-            Encode
-        </a>
-    </div>
-    <div class="output">
-        <textarea id="output" name="output">
-        </textarea>
-        <button id="output-copy">Copy</button>
-    </div>
-    <div id="library">
+    <main class="main">
+        <div class="section section__input">
+            <div class="section__header">
+                <h3 class="header">Step 1</h3>
+            </div>
+            <div class="input">
+                <textarea id="input" name="input" placeholder="Paste the URL here..."></textarea>
+            </div>
+        </div>
+        <div class="section section__settings">
+            <div class="section__header">
+                <h3 class="header">Step 2</h3>
+            </div>
+            <div class="section__checkboxes">
+                <div class="checkbox">
+                    <label for="image">
+                        <input type="checkbox" id="image" name="image" value="yes"> Image 
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="font">
+                        <input type="checkbox" id="font" name="font" value="yes"> Font 
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="icon">
+                        <input type="checkbox" id="icon" name="icon" value="yes"> Icon 
+                    </label>
+                </div>
+            </div>
+            <div class="ImageWidth">
+                <input type="text" id="width" name="width" placeholder="Width"> 
+            </div>
 
-    </div>
+        </div>
+        <div class="encode__button">
+            <div class="button">
+                <a href="#" id="encode">
+                    <span class="material-symbols-outlined">code</span>
+                    Encode
+                </a>
+            </div>
+        </div>
+        <div class="section section__output">
+            <div class="section__header section__header_output">
+                <div class="header__flex">
+                    <h3 class="header">Step 3</h3>
+                </div>
+                <div class="output__flex">
+                    <a id="output-copy">Copy</a>
+                </div>
+            </div>
+            <div class="output">
+                <textarea id="output" name="output"></textarea>
+            </div>
+        </div>
+        <div class="section section__library">
+            <div class="section__header">
+                <h3 class="header">Assets Library</h3>
+            </div>
+            <div id="library">
+                <div class="library__row">
+                    <div class="row__icon">I</div>
+                    <div class="row__url">URL</div>
+                    <div class="row__copy">Copy</div>
+                </div>
+
+            </div>
+        </div>
+    </main>
 
     
     <script src="app.js"></script>

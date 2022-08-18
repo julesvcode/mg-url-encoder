@@ -2,12 +2,16 @@
     padding: 1rem 0;
 } */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 :root {
-    --main-bg-color: #ffffff; /* #C3BFD0 */
-    --button-color: #4ABEB1;
-    --section-header-color: #241B40;
-    --secondary-color: #F9C85F;
-    --black-color: #333333;
+    --main-bg-color: #F9F8EB; /* #C3BFD0 */
+    --button-color: #74B49B; /* #4ABEB1; */
+    --section-bg-color: #5C8D89; /* #241B40;*/
+    --section-body-color: #ffffff;
+    --section-border-color: #A7D7C5 ;
+    --secondary-color: #A7D7C5;
+    --black-color: #5C8D89; /* #333333;*/
   }
 
 
@@ -22,6 +26,7 @@
 body {
     font-size: 16px;
     background-color: var(--main-bg-color);
+    font-family: 'Inter', sans-serif;
 }
 
 * {
@@ -36,9 +41,13 @@ main {
     padding: 20px;
 }
 
+h1 {
+    text-align: center;
+    color: var(--section-bg-color);
+}
+
 .section {
     width: 100%;
-    background-color: #ffffff;
     border: 1px solid var(--black-color);
     border-radius: 6px;
     margin: 1.5rem 0;
@@ -47,18 +56,25 @@ main {
 }
 
 .section__header {
-    background-color: var(--section-header-color);
+    background-color: var(--section-bg-color);
     border-radius: 5.5px 5.5px 0px 0px;
     width: 100%;
     height: 40px;
-    color: #ffffff;
+    color: #fff;
     display: flex;
     align-items: center;
     padding: 0 20px;
 }
 
-.input, .output {
+.section__body {
+    background-color: var(--section-body-color);
     padding: 20px;
+    border-radius: 6px;
+}
+
+.section__body_library {
+    background-color: var(--section-body-color);
+    border-radius: 6px;
 }
 
 textarea {
@@ -86,11 +102,14 @@ textarea {
     margin: 0 10px;
     padding: 0.5rem 0;
     border-radius: 6px;
+    color: #fff;
 }
 
 .ImageWidth {
     display: none;
-    margin: 0 0 20px 20px;
+    padding: 0 0 20px 20px;
+    background-color: var(--section-body-color);
+    border-radius: 6px;
 }
 
 .ImageWidth input {
@@ -106,7 +125,7 @@ textarea {
 .encode__button {
     background-color: var(--button-color);
     border-radius: 6px;
-    width: fit-content;
+    width: 100%;
     padding: 1rem 2rem;
 }
 
@@ -119,6 +138,9 @@ textarea {
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -141,13 +163,15 @@ textarea {
 
 .output__flex {
     flex: 15%;
-    height: 100%;
+    height: 75%;
+    width: 90%;
+    margin: .25rem;
     background-color: var(--button-color);
     border-color: var(--button-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0 6px 0 0;
+    border-radius: 6px;
     cursor: pointer;
 }
 

@@ -12,19 +12,20 @@
 </head>
 <body>
     <main class="main">
+        <h1>MG URL Encoder</h1>
         <div class="section section__input">
             <div class="section__header">
                 <h3 class="header">Step 1</h3>
             </div>
-            <div class="input">
-                <textarea id="input" name="input" placeholder="Paste the URL here..."></textarea>
+            <div class="section__body">
+                    <textarea id="input" name="input" placeholder="Paste the URL here..."></textarea>
             </div>
         </div>
         <div class="section section__settings">
             <div class="section__header">
                 <h3 class="header">Step 2</h3>
             </div>
-            <div class="section__checkboxes">
+            <div class="section__body section__checkboxes">
                 <div class="checkbox">
                     <label for="image">
                         <input type="checkbox" id="image" name="image" value="yes"> Image 
@@ -44,13 +45,12 @@
             <div class="ImageWidth">
                 <input type="text" id="width" name="width" placeholder="Width"> 
             </div>
-
         </div>
         <div class="encode__button">
             <div class="button">
                 <a href="#" id="encode">
                     <span class="material-symbols-outlined">code</span>
-                    Encode
+                    <span>Encode</span>
                 </a>
             </div>
         </div>
@@ -63,7 +63,7 @@
                     <a id="output-copy">Copy</a>
                 </div>
             </div>
-            <div class="output">
+            <div class="section__body">
                 <textarea id="output" name="output"></textarea>
             </div>
         </div>
@@ -71,14 +71,15 @@
             <div class="section__header">
                 <h3 class="header">Assets Library</h3>
             </div>
-            <div id="library">
-                <div class="library__row">
-                    <div class="row__icon">I</div>
-                    <div class="row__url">URL</div>
-                    <div class="row__copy">Copy</div>
+            <div class="section__body_library">
+                <div id="library">
+                    <div class="library__row">
+                        <div class="row__icon">I</div>
+                        <div class="row__url">URL</div>
+                        <div class="row__copy">Copy</div>
+                    </div>
                 </div>
-
-            </div>
+        </div>
         </div>
     </main>
 

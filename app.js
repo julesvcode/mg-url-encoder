@@ -1,4 +1,6 @@
-const output = document.getElementById('output');
+// MAIN VARIABLES
+
+const outputResult = document.getElementById('output');
 const outputCopy = document.getElementById('output-copy');
 
 const imageWidth = document.querySelector('.ImageWidth');
@@ -20,26 +22,29 @@ imageCheckbox.addEventListener('change', function() {
 });
 
 function encodeFunction() {
+
     // RETRIEVE VALUES FROM INPUTS
-    const url = document.getElementById('input').value;
+    const urlInput = document.getElementById('input').value;
     const imageWidthValue = document.getElementById('width').value;
 
-    // CUSTOMISE URL
+    // CUSTOMISE IMAGE URL
     const urlPrefix = "https://musicglue-images-prod.global.ssl.fastly.net/resize?url=";
     const urlSuffix = "&width=" + imageWidthValue + "&mode=contain";
+    
+    // GENERATE OUTPUT
     let finalOutput;
 
     // ENCODE URL
     if (imageCheckbox.checked === true && fontCheckbox.checked === false && iconCheckbox.checked === false) {
-        const output = encodeURIComponent(url);
-        finalOutput = urlPrefix + output + urlSuffix;
-        document.getElementById('output').value = finalOutput;
+        const encodedUrl = encodeURIComponent(urlInput);
+        finalOutput = urlPrefix + encodedUrl + urlSuffix;
+        outputResult.value = finalOutput;
     } else if (fontCheckbox.checked === true && imageCheckbox.checked === false && iconCheckbox.checked === false) {
-        finalOutput = url.replace("musicgluewwwassets.s3.amazonaws.com", "musicglue-wwwassets.global.ssl.fastly.net");
-        document.getElementById('output').value = finalOutput;
+        finalOutput = urlInput.replace("musicgluewwwassets.s3.amazonaws.com", "musicglue-wwwassets.global.ssl.fastly.net");
+        outputResult.value = finalOutput;
     } else if (iconCheckbox.checked === true && fontCheckbox.checked === false && imageCheckbox.checked === false) {
-        finalOutput = url.replace("musicgluewwwassets.s3.amazonaws.com", "musicglue-wwwassets.global.ssl.fastly.net");
-        document.getElementById('output').value = finalOutput;
+        finalOutput = urlInput.replace("musicgluewwwassets.s3.amazonaws.com", "musicglue-wwwassets.global.ssl.fastly.net");
+        outputResult.value = finalOutput;
     }  else {
         alert("ERROR! You need to tick at least one of the check boxes")
     }
@@ -52,7 +57,8 @@ function encodeFunction() {
 const button = document.getElementById('encode');
 button.addEventListener("click", encodeFunction);
 
+// Copy output to clipboard
 outputCopy.addEventListener("click", function() {
-    output.select();
+    outputResult.select();
     document.execCommand("Copy");
 });

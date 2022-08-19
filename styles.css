@@ -5,13 +5,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 :root {
-    --main-bg-color: #F9F8EB; /* #C3BFD0 */
-    --button-color: #74B49B; /* #4ABEB1; */
-    --section-bg-color: #5C8D89; /* #241B40;*/
+    --primary-color: #5C8D89;
+    --secondary-color: #74B49B;
+    --highlight-color: #A7D7C5;
+    --background-color: #F9F8EB;
+    --text-color: #ffffff;
     --section-body-color: #ffffff;
-    --section-border-color: #A7D7C5 ;
-    --secondary-color: #A7D7C5;
-    --black-color: #5C8D89; /* #333333;*/
   }
 
 
@@ -25,7 +24,7 @@
 
 body {
     font-size: 16px;
-    background-color: var(--main-bg-color);
+    background-color: var(--background-color);
     font-family: 'Inter', sans-serif;
 }
 
@@ -43,12 +42,12 @@ main {
 
 h1 {
     text-align: center;
-    color: var(--section-bg-color);
+    color: var(--primary-color);
 }
 
 .section {
     width: 100%;
-    border: 1px solid var(--black-color);
+    border: 1px solid var(--primary-color);
     border-radius: 6px;
     margin: 1.5rem 0;
     display: flex;
@@ -56,11 +55,11 @@ h1 {
 }
 
 .section__header {
-    background-color: var(--section-bg-color);
+    background-color: var(--primary-color);
     border-radius: 5.5px 5.5px 0px 0px;
     width: 100%;
     height: 40px;
-    color: #fff;
+    color: var(--text-color);
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -80,7 +79,7 @@ h1 {
 textarea {
     width: 100%;
     max-width: 100%;
-    border: 1px solid var(--black-color);
+    border: 1px solid var(--primary-color);
     min-height: 75px;
     max-height: 75px;
     padding: 10px;
@@ -102,7 +101,7 @@ textarea {
     margin: 0 10px;
     padding: 0.5rem 0;
     border-radius: 6px;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .ImageWidth {
@@ -116,26 +115,32 @@ textarea {
     min-width: 30%;
     text-align: center;
     height: 32px;
-    border: 1px solid var(--black-color);
+    border: 1px solid var(--primary-color);
     border-radius: 6px;
 }
 
 /* ENCODE BUTTON */
 
 .encode__button {
-    background-color: var(--button-color);
+    background-color: var(--secondary-color);
     border-radius: 6px;
     width: 100%;
     padding: 1rem 2rem;
+    font-weight: 700;
 }
 
-.encode__button:hover {
-    background-color: #241B40;
+.encode__button:hover, .output__flex:hover {
+    background-color: var(--highlight-color);
     cursor: pointer;
 }
 
+.encode__button .material-symbols-outlined {
+    font-weight: 700!important;
+    padding: 0 .25rem;
+}
+
 .button a {
-    color: #ffffff;
+    color: var(--text-color);
     text-decoration: none;
     text-transform: uppercase;
     display: flex;
@@ -166,8 +171,8 @@ textarea {
     height: 75%;
     width: 90%;
     margin: .25rem;
-    background-color: var(--button-color);
-    border-color: var(--button-color);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,15 +180,17 @@ textarea {
     cursor: pointer;
 }
 
+
+
 /* LIBRARY */
 
-/* .section__library {
+.section__library {
     display: none;
-} */
+}
 
 .library__row {
     display: flex;
-    border-bottom: 1px solid var(--black-color);
+    border-bottom: 1px solid var(--primary-color);
     height: 3rem;
     align-items: center;
 }

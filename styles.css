@@ -13,13 +13,6 @@
     --section-body-color: #ffffff;
   }
 
-
-#library {
-    /* border: 1px solid black; */
-    /* width: 500px; */
-    height: 300px;
-}
-
 /* MAIN */
 
 body {
@@ -184,15 +177,25 @@ textarea {
 
 /* LIBRARY */
 
-.section__library {
+/* .section__library {
     display: none;
+} */
+
+.section__body_library {
+    height: 500px;
 }
 
 .library__row {
     display: flex;
     border-bottom: 1px solid var(--primary-color);
     height: 3rem;
+    max-height: 3rem;
     align-items: center;
+}
+
+.row__copy a {
+    text-decoration: none;
+    color: #000;
 }
 
 .row__icon, .row__copy {
@@ -202,6 +205,42 @@ textarea {
 
 .row__url {
     flex-basis: 80%;
+    max-width: 80%;
     text-align: left;
+    line-height: 3rem;
+    max-height: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
 }
 
+
+/* THUMBNAIL */
+
+.thumbnail{
+    position: relative;
+    z-index: 2;
+}
+
+.thumbnail:hover{
+    background-color: transparent;
+    z-index: 50;
+}
+
+.thumbnail span{ /*CSS for enlarged image*/
+    position: absolute;
+    left: -500px;
+    visibility: hidden;
+    text-decoration: none;
+}
+
+.thumbnail span img{ /*CSS for enlarged image*/
+    border-width: 0;
+}
+
+.thumbnail:hover span{ /*CSS for enlarged image on hover*/
+    visibility: visible;
+    top: 0;
+    left: 60px; /*position where enlarged image should offset horizontally */
+
+}
